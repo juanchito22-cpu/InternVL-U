@@ -19,7 +19,7 @@ If you find our work helpful, please give us a ⭐.
 ## 🎉 News
 - **[2026/03/06]** 🔥InternVL-U technical report released. 
 - **[2026/03/06]** ✨Inference code and model checkpoint released.
-- **[2026/03/06]** 🛠️UMMEvalKit and TextEdit Benchmark released.
+- **[2026/03/06]** 🛠️GenEditEvalKit and TextEdit Benchmark released.
 
 
 ## 📖 Introduction
@@ -260,6 +260,11 @@ for idx, image in enumerate(output_images):
 
 ## Citation
 If you find our InternVL-U useful, please cite our InternVL-U technical report using this BibTeX.
+
+```
+
+
+```
 
 ## 🙏 Acknowledgement
 We sincerely thank the contributors of the following projects for their open-sourced code, models, and datasets. InternVL-U is built upon and inspired by: InternVL3.5, BAGEL, Qwen2.5-VL, Qwen3-VL, Qwen-Image, BLIP3-o, OpenGPT-4o-Image, ShareGPT-4o-Image, OmniGen2, UniWorld-V1, Picobanana, Nano-consist, NHR-Edit, and so on.
